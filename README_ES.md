@@ -99,17 +99,17 @@ Esta es la diferencia entre una simple consulta de IP y **inteligencia de amenaz
 ```bash
 # Paso 1: DOMINUS mapea el dominio y extrae IPs
 python dominus.py evolve.es --only dns
-# Registros DNS revelan: 79.137.114.210 y 54.38.163.115
+# Registros DNS revelan: XX.XXX.XXX.XXX y XX.XX.XXX.XXX
 
 # Paso 2: SENTINEL perfila cada IP
-python sentinel.py 79.137.114.210
+python sentinel.py XX.XXX.XXX.XXX
 # → OVH/Wetopi · España · Threat Score 2/100 · Limpia
 
-python sentinel.py 54.38.163.115
+python sentinel.py XX.XX.XXX.XXX
 # → OVH/Wetopi · Países Bajos · Threat Score 2/100 · Limpia
 ```
 
-**Conclusión combinada:** evolve.es tiene problemas de autenticación de email a nivel DNS (DMARC p=none, SPF soft-fail) pero su infraestructura subyacente es limpia, alojada en Europa, sin historial de abuso. El riesgo está en la configuración, no en los servidores.
+**Conclusión combinada:** ejemplo.es tiene problemas de autenticación de email a nivel DNS (DMARC p=none, SPF soft-fail) pero su infraestructura subyacente es limpia, alojada en Europa, sin historial de abuso. El riesgo está en la configuración, no en los servidores.
 
 > 🔗 Ver [DOMINUS](https://github.com/youruser/dominus) para reconocimiento a nivel de dominio.
 
@@ -188,6 +188,8 @@ SENTINEL funciona sin ellas — esas fases se omiten con elegancia y quedan marc
 | Leaflet.js (CDN) | Mapa interactivo de geolocalización en el informe |
 
 ---
+<img width="1510" height="2585" alt="sentinel" src="https://github.com/user-attachments/assets/6e0ec154-147b-4c91-9a3f-8a6179f7f4c8" />
+
 
 ## Aviso legal
 
