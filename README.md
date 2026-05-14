@@ -107,22 +107,22 @@ SENTINEL and DOMINUS are designed to work together as a complete reconnaissance 
 3. Cross-reference findings → complete threat picture
 ```
 
-**Example with evolve.es:**
+**Example with example.es:**
 
 ```bash
 # Step 1: DOMINUS maps the domain
-python dominus.py evolve.es --only dns
-# DNS records reveal two IPs: 79.137.114.210 and 54.38.163.115
+python dominus.py example.es --only dns
+# DNS records reveal two IPs: XX.XXX.XXX.XXX and XX.XX.XXX.XXX
 
 # Step 2: SENTINEL profiles each IP
-python sentinel.py 79.137.114.210
+python sentinel.py XX.XXX.XXX.XXX
 # → OVH/Wetopi · Spain · Threat Score 2/100 · Clean
 
-python sentinel.py 54.38.163.115
+python sentinel.py XX.XX.XXX.XXX
 # → OVH/Wetopi · Netherlands · Threat Score 2/100 · Clean
 ```
 
-**Combined conclusion:** evolve.es has email authentication issues at the DNS level (DMARC p=none, SPF soft-fail) but its underlying infrastructure is clean, European-hosted, with no abuse history. The risk is in the configuration, not the servers.
+**Combined conclusion:** example.es has email authentication issues at the DNS level (DMARC p=none, SPF soft-fail) but its underlying infrastructure is clean, European-hosted, with no abuse history. The risk is in the configuration, not the servers.
 
 This kind of layered analysis — domain configuration + IP reputation — is standard practice in professional security assessments. DOMINUS and SENTINEL automate it completely.
 
@@ -178,16 +178,16 @@ Both APIs have free tiers. SENTINEL works without them — those phases are skip
 
 ```bash
 # Full scan
-.venv/bin/python sentinel.py 185.220.101.1
+.venv/bin/python sentinel.py XXX.XXX.XXX.X
 
 # Skip port scan (faster)
-.venv/bin/python sentinel.py 185.220.101.1 --skip ports
+.venv/bin/python sentinel.py XXX.XXX.XXX.X --skip ports
 
 # Specific phases only
-.venv/bin/python sentinel.py 185.220.101.1 --only geo abuse tor
+.venv/bin/python sentinel.py XXX.XXX.XXX.X --only geo abuse tor
 
 # Full scan + JSON export
-.venv/bin/python sentinel.py 185.220.101.1 --json
+.venv/bin/python sentinel.py XXX.XXX.XXX.X --json
 ```
 
 ---
@@ -230,6 +230,9 @@ sentinel/
 ```
 
 ---
+
+
+<img width="1510" height="2585" alt="sentinel" src="https://github.com/user-attachments/assets/60f53c5d-5feb-4455-b8d2-7f12a00022d3" />
 
 ## Legal notice
 
